@@ -246,14 +246,11 @@ CELERY_WORKER_HIJACK_ROOT_LOGGER = False
 CELERY_WORKER_PREFETCH_MULTIPLIER = 1
 CELERY_TASK_ACKS_LATE = True
 
-# Cache Configuration - Updated
+# Cache Configuration - Updated to fix CLIENT_CLASS error
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
         'LOCATION': config('REDIS_URL', default='redis://localhost:6379/1'),
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        },
         'KEY_PREFIX': 'certifynow',
         'TIMEOUT': 300,
     }
@@ -314,7 +311,7 @@ if DEBUG:
         '127.0.0.1',
         'localhost',
     ]
-    
+
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': lambda request: DEBUG,
     }
@@ -343,7 +340,7 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': BASE_DIR / 'logs' / 'django.log',
-            'maxBytes': 1024*1024*15,  # 15MB
+            'maxBytes': 1024 * 1024 * 15,  # 15MB
             'backupCount': 10,
             'formatter': 'verbose',
         },
@@ -357,7 +354,7 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': BASE_DIR / 'logs' / 'error.log',
-            'maxBytes': 1024*1024*15,  # 15MB
+            'maxBytes': 1024 * 1024 * 15,  # 15MB
             'backupCount': 10,
             'formatter': 'verbose',
         },
@@ -392,7 +389,7 @@ os.makedirs(BASE_DIR / 'logs', exist_ok=True)
 if not DEBUG:
     # Database connection pooling
     DATABASES['default']['CONN_MAX_AGE'] = 600
-    
+
     # Template caching
     TEMPLATES[0]['OPTIONS']['loaders'] = [
         ('django.template.loaders.cached.Loader', [
@@ -402,7 +399,7 @@ if not DEBUG:
     ]
 
 # Custom Settings
-CERTIFICATE_EXPIRY_DAYS = config('CERTIFICATE_EXPIRY_DAYS', default=365*5, cast=int)  # 5 years
+CERTIFICATE_EXPIRY_DAYS = config('CERTIFICATE_EXPIRY_DAYS', default=365 * 5, cast=int)  # 5 years
 QR_CODE_SIZE = config('QR_CODE_SIZE', default=200, cast=int)
 MAX_CERTIFICATES_PER_BULK = config('MAX_CERTIFICATES_PER_BULK', default=100, cast=int)
 
