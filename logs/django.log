@@ -1,0 +1,10 @@
+INFO 2025-07-18 00:42:57,374 autoreload 7156 5224 Watching for file changes with StatReloader
+INFO 2025-07-18 00:43:55,791 autoreload 5296 15852 Watching for file changes with StatReloader
+WARNING 2025-07-18 00:44:02,734 basehttp 5296 11032 "GET / HTTP/1.1" 404 12590
+INFO 2025-07-18 00:44:02,811 basehttp 5296 12200 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-18 00:44:02,813 basehttp 5296 11032 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-18 00:44:02,837 basehttp 5296 22376 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-07-18 00:44:02,858 basehttp 5296 16808 - Broken pipe from ('127.0.0.1', 62573)
+INFO 2025-07-18 00:44:02,878 basehttp 5296 22376 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-18 00:44:06,172 basehttp 5296 22376 "GET /api/docs/ HTTP/1.1" 200 13462
+INFO 2025-07-18 00:44:06,514 basehttp 5296 22376 "GET /api/schema/ HTTP/1.1" 200 190936
