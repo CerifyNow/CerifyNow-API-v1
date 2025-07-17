@@ -3,12 +3,12 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from certificates.models import Certificate
-from .models import VerificationRequest, VerificationLog
-from .serializers import (
-    VerificationRequestSerializer, VerificationLogSerializer,
-    CertificateVerifySerializer
-)
-from .utils import get_client_ip, get_user_agent
+from verification.models import VerificationRequest, VerificationLog
+from verification.serializers import (
+    VerificationRequestSerializer,
+    VerificationLogSerializer,
+    CertificateVerifySerializer)
+from verification.utils import get_client_ip, get_user_agent
 import hashlib
 import json
 
