@@ -11,8 +11,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             'email', 'username', 'first_name', 'last_name', 'phone',
-            'role', 'password', 'password_confirm', 'organization_name',
-            'organization_license', 'organization_address'
+            'role', 'password', 'password_confirm', 'institution_name',
+            'institution_license', 'institution_address'
         ]
     
     def validate(self, attrs):
@@ -68,7 +68,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'email', 'username', 'first_name', 'last_name', 'full_name',
             'phone', 'role', 'avatar', 'is_verified', 'date_of_birth', 'address',
-            'organization_name', 'organization_license', 'organization_address',
+            'institution_name', 'institution_license', 'institution_address',
             'profile', 'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at']
