@@ -71,8 +71,8 @@ jobs:
             
             # Install requirements without sourcing activate
             echo "Installing dependencies..."
-            venv/bin/pip install --upgrade pip
-            venv/bin/pip install -r requirements.txt
+            pip install --upgrade pip
+            pip install -r requirements.txt
             
             # Run Django management commands
             echo "Running migrations..."
