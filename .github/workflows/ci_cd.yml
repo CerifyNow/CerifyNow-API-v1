@@ -76,10 +76,10 @@ jobs:
             
             # Run Django management commands
             echo "Running migrations..."
-            venv/bin/python manage.py migrate --noinput
+            python3 manage.py migrate --noinput
             
             echo "Collecting static files..."
-            venv/bin/python manage.py collectstatic --noinput
+            python3 manage.py collectstatic --noinput
             
             echo "Restarting Django service..."
             sudo systemctl daemon-reload
