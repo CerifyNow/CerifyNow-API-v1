@@ -63,11 +63,15 @@ jobs:
 
             cd /home/ubuntu/$REPO_DIR
 
-            if [ ! -d "venv" ]; then
-              echo "🐍 Creating virtual environment..."
-              python3 -m venv venv || python -m venv venv
+            
+            echo "🐍 Creating virtual environment..."
+            python3 -m venv venv || python -m venv venv || { echo "❌ Venv yaratib bo‘lmadi"; exit 1; }
+            
+            if [ ! -f "venv/bin/activate" ]; then
+               echo "❌ venv yaratishda muammo bor, activate fayli topilmadi"
+               exit 1
             fi
-
+            
             echo "⚙️ Activating virtual environment..."
             source venv/bin/activate
 
