@@ -53,7 +53,7 @@ jobs:
             # Clone or update the repository
             if [ ! -d "$REPO_DIR" ]; then
               echo "Cloning repository into $REPO_DIR..."
-              git clone https://github.com/CerifyNow/CerifyNow-API.git $REPO_DIR
+              git clone https://github.com/CerifyNow/CerifyNow-API-v1.git $REPO_DIR
             else
               echo "Repository already exists, pulling the latest changes..."
               cd $REPO_DIR
