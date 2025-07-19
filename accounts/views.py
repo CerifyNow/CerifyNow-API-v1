@@ -4,7 +4,10 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
-from .serializers import (
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
+from drf_spectacular.types import OpenApiTypes
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from accounts.serializers import (
     UserRegistrationSerializer, UserLoginSerializer, 
     UserSerializer, PasswordChangeSerializer
 )
@@ -12,9 +15,25 @@ from .serializers import (
 User = get_user_model()
 
 class RegisterView(generics.CreateAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
+    permission_classes = [AllowAny]
     queryset = User.objects.all()
     serializer_class = UserRegistrationSerializer
-    permission_classes = [AllowAny]
+
+
+    @extend_schema(
+        summary="User Registration",
+        description="Foydalanuvchini ro'yxatdan o'tkazadi va JWT tokenlarni qaytaradi.",
+        request=UserRegistrationSerializer,
+        responses={
+            201: OpenApiResponse(
+                response=UserSerializer,
+                description="Muvaffaqiyatli ro'yxatdan o'tildi"
+            ),
+            400: OpenApiResponse(description="Xatolik: noto‘g‘ri ma’lumot")
+        },
+        tags=["Auth"]
+    )
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -34,8 +53,23 @@ class RegisterView(generics.CreateAPIView):
         }, status=status.HTTP_201_CREATED)
 
 class LoginView(generics.GenericAPIView):
-    serializer_class = UserLoginSerializer
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
     permission_classes = [AllowAny]
+    serializer_class = UserLoginSerializer
+
+    @extend_schema(
+        summary="User Login",
+        description="Foydalanuvchini tizimga kirgizadi va JWT tokenlarni qaytaradi.",
+        request=UserLoginSerializer,
+        responses={
+            200: OpenApiResponse(
+                response=UserSerializer,
+                description="Muvaffaqiyatli tizimga kirildi"
+            ),
+            400: OpenApiResponse(description="Login yoki parol xato")
+        },
+        tags=["Auth"]
+    )
     
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -62,8 +96,19 @@ class ProfileView(generics.RetrieveUpdateAPIView):
         return self.request.user
 
 class ChangePasswordView(generics.GenericAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
     serializer_class = PasswordChangeSerializer
     permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        summary="Get or Update User Profile",
+        description="Foydalanuvchi o‘z profilini ko‘rishi yoki yangilashi mumkin.",
+        responses={
+            200: OpenApiResponse(response=UserSerializer, description="Foydalanuvchi profili"),
+            401: OpenApiResponse(description="Avtorizatsiya kerak")
+        },
+        tags=["User"]
+    )
     
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

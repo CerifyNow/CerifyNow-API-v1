@@ -4,25 +4,42 @@ from rest_framework.response import Response
 from django.db.models import Count, Q
 from django.utils import timezone
 from datetime import datetime, timedelta
-from .models import Certificate, CertificateTemplate, CertificateVerification
-from .serializers import (
+from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+
+from certificates.models import Certificate, CertificateTemplate, CertificateVerification
+from certificates.serializers import (
     CertificateSerializer, CertificateCreateSerializer,
     CertificateTemplateSerializer, CertificateVerificationSerializer,
     CertificateStatsSerializer
 )
-from .permissions import (
+from certificates.permissions import (
     CanCreateCertificatePermission, IsOwnerOrIssuerOrCanView,
     IsSuperAdminPermission, IsInstitutionAdminPermission
 )
 
 
 class CertificateListCreateView(generics.ListCreateAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
     serializer_class = CertificateSerializer
     permission_classes = [permissions.IsAuthenticated]
     filterset_fields = ['status', 'certificate_type', 'is_verified']
     search_fields = ['title', 'certificate_id', 'holder__first_name', 'holder__last_name']
     ordering_fields = ['created_at', 'issue_date', 'title']
     ordering = ['-created_at']
+
+    @extend_schema(
+        summary="List and Create Certificates",
+        description="List all certificates for the current user based on their role or create a new certificate (issuer only).",
+        request=CertificateCreateSerializer,
+        responses={
+            200: OpenApiResponse(response=CertificateSerializer, description="List of certificates"),
+            201: OpenApiResponse(response=CertificateSerializer, description="Certificate successfully created"),
+            400: OpenApiResponse(description="Invalid input data"),
+            403: OpenApiResponse(description="Permission denied"),
+        },
+        tags=["Certificate Management"]
+    )
 
     def get_queryset(self):
         user = self.request.user
@@ -49,9 +66,24 @@ class CertificateListCreateView(generics.ListCreateAPIView):
 
 
 class CertificateDetailView(generics.RetrieveUpdateDestroyAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
     queryset = Certificate.objects.all()
     serializer_class = CertificateSerializer
     permission_classes = [IsOwnerOrIssuerOrCanView]
+
+    @extend_schema(
+        summary="Retrieve, Update or Delete a Certificate",
+        description="Retrieve certificate details, or update/delete them if you have the proper permissions.",
+        responses={
+            200: OpenApiResponse(response=CertificateSerializer, description="Certificate details"),
+            204: OpenApiResponse(description="Certificate deleted successfully"),
+            400: OpenApiResponse(description="Invalid data"),
+            403: OpenApiResponse(description="Permission denied"),
+            404: OpenApiResponse(description="Certificate not found"),
+        },
+        request=CertificateSerializer,
+        tags=["Certificate Management"]
+    )
 
     def get_permissions(self):
         if self.request.method in ['PUT', 'PATCH', 'DELETE']:

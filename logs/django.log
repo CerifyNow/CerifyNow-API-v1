@@ -1,0 +1,174 @@
+INFO 2025-07-18 00:42:57,374 autoreload 7156 5224 Watching for file changes with StatReloader
+INFO 2025-07-18 00:43:55,791 autoreload 5296 15852 Watching for file changes with StatReloader
+WARNING 2025-07-18 00:44:02,734 basehttp 5296 11032 "GET / HTTP/1.1" 404 12590
+INFO 2025-07-18 00:44:02,811 basehttp 5296 12200 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-18 00:44:02,813 basehttp 5296 11032 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-18 00:44:02,837 basehttp 5296 22376 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-07-18 00:44:02,858 basehttp 5296 16808 - Broken pipe from ('127.0.0.1', 62573)
+INFO 2025-07-18 00:44:02,878 basehttp 5296 22376 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-18 00:44:06,172 basehttp 5296 22376 "GET /api/docs/ HTTP/1.1" 200 13462
+INFO 2025-07-18 00:44:06,514 basehttp 5296 22376 "GET /api/schema/ HTTP/1.1" 200 190936
+INFO 2025-07-18 12:46:53,324 autoreload 22524 7116 Watching for file changes with StatReloader
+INFO 2025-07-18 12:47:36,377 autoreload 22020 11884 Watching for file changes with StatReloader
+INFO 2025-07-18 12:48:23,991 autoreload 22020 11884 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\certificates\urls.py changed, reloading.
+INFO 2025-07-18 12:48:25,773 autoreload 11504 684 Watching for file changes with StatReloader
+INFO 2025-07-18 12:49:53,216 autoreload 11504 684 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\certificates\views.py changed, reloading.
+INFO 2025-07-18 12:49:55,028 autoreload 9832 6924 Watching for file changes with StatReloader
+INFO 2025-07-18 12:53:17,156 autoreload 9832 6924 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\certificates\urls.py changed, reloading.
+INFO 2025-07-18 12:53:19,314 autoreload 7956 10960 Watching for file changes with StatReloader
+INFO 2025-07-18 12:53:21,437 autoreload 7956 10960 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\certificates\urls.py changed, reloading.
+INFO 2025-07-18 12:53:22,880 autoreload 7132 18780 Watching for file changes with StatReloader
+INFO 2025-07-18 12:54:53,539 autoreload 22852 23584 Watching for file changes with StatReloader
+INFO 2025-07-18 12:55:05,951 basehttp 22852 5556 "GET /api/docs/ HTTP/1.1" 200 13462
+ERROR 2025-07-18 12:55:06,358 basehttp 22852 5556 "GET /api/schema/ HTTP/1.1" 500 199249
+ERROR 2025-07-18 12:55:06,604 basehttp 22852 5556 "GET /api/schema/ HTTP/1.1" 500 199249
+INFO 2025-07-18 12:55:06,821 basehttp 22852 5556 "GET /__debug__/history_sidebar/?store_id=87a392875bb64633837a1ad389a65487 HTTP/1.1" 200 9049
+ERROR 2025-07-18 12:55:17,164 basehttp 22852 23648 "GET /api/schema/ HTTP/1.1" 500 199484
+INFO 2025-07-18 12:58:19,027 autoreload 22852 23584 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\accounts\serializers.py changed, reloading.
+INFO 2025-07-18 12:58:21,442 autoreload 22640 23516 Watching for file changes with StatReloader
+INFO 2025-07-18 12:58:25,605 basehttp 22640 21528 "GET /api/schema/ HTTP/1.1" 200 85658
+INFO 2025-07-18 12:58:32,346 basehttp 22640 8972 "GET /api/docs/ HTTP/1.1" 200 13460
+INFO 2025-07-18 12:58:32,866 basehttp 22640 8972 "GET /api/schema/ HTTP/1.1" 200 176498
+INFO 2025-07-18 13:01:36,862 basehttp 22640 9404 "GET /api/docs/ HTTP/1.1" 200 13460
+INFO 2025-07-18 13:01:37,340 basehttp 22640 9404 "GET /api/schema/ HTTP/1.1" 200 176498
+INFO 2025-07-18 13:01:39,050 basehttp 22640 9404 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-07-18 13:01:39,424 basehttp 22640 9404 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 13172
+INFO 2025-07-18 13:01:39,534 basehttp 22640 23840 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-07-18 13:01:39,546 basehttp 22640 7412 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2025-07-18 13:01:39,550 basehttp 22640 2760 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-07-18 13:01:39,550 basehttp 22640 9404 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2025-07-18 13:01:39,553 basehttp 22640 17864 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2025-07-18 13:01:39,554 basehttp 22640 16444 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2025-07-18 13:01:39,625 basehttp 22640 23840 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-07-18 13:01:54,761 basehttp 22640 24024 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 13397
+INFO 2025-07-18 13:02:07,296 basehttp 22640 18256 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-07-18 13:02:07,608 basehttp 22640 18256 "GET /admin/ HTTP/1.1" 200 14162
+INFO 2025-07-18 13:02:07,668 basehttp 22640 18256 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-07-18 13:02:07,668 basehttp 22640 2036 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-07-18 13:02:07,681 basehttp 22640 22860 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-07-18 13:32:24,070 basehttp 22640 21764 "OPTIONS /api/v1/auth/register/ HTTP/1.1" 200 0
+WARNING 2025-07-18 13:32:24,565 basehttp 22640 21764 "POST /api/v1/auth/register/ HTTP/1.1" 400 45
+WARNING 2025-07-18 13:32:37,734 basehttp 22640 18500 "POST /api/v1/auth/register/ HTTP/1.1" 400 45
+INFO 2025-07-18 13:32:55,384 basehttp 22640 21812 "POST /api/v1/auth/register/ HTTP/1.1" 201 1412
+WARNING 2025-07-18 13:44:19,639 basehttp 22640 11124 "POST /api/v1/organizations/ HTTP/1.1" 400 84
+WARNING 2025-07-18 13:47:56,550 basehttp 22640 17932 "POST /api/v1/organizations/ HTTP/1.1" 400 84
+INFO 2025-07-18 13:54:50,569 autoreload 22640 23516 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:54:55,110 autoreload 6984 21736 Watching for file changes with StatReloader
+INFO 2025-07-18 13:55:14,824 autoreload 6984 21736 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:55:16,563 autoreload 15012 14328 Watching for file changes with StatReloader
+INFO 2025-07-18 13:55:34,591 autoreload 15012 14328 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:55:36,141 autoreload 16292 19816 Watching for file changes with StatReloader
+INFO 2025-07-18 13:56:54,195 autoreload 16292 19816 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:56:56,764 autoreload 22832 15472 Watching for file changes with StatReloader
+INFO 2025-07-18 13:58:05,345 autoreload 22832 15472 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:58:07,797 autoreload 11560 8108 Watching for file changes with StatReloader
+INFO 2025-07-18 13:58:23,707 autoreload 11560 8108 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:58:25,270 autoreload 18668 2184 Watching for file changes with StatReloader
+INFO 2025-07-18 13:58:30,557 autoreload 18668 2184 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:58:31,978 autoreload 24056 14252 Watching for file changes with StatReloader
+INFO 2025-07-18 13:58:44,108 autoreload 24056 14252 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:58:45,702 autoreload 23748 15212 Watching for file changes with StatReloader
+INFO 2025-07-18 13:58:49,895 autoreload 23748 15212 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:58:51,483 autoreload 676 7680 Watching for file changes with StatReloader
+INFO 2025-07-18 13:59:01,141 autoreload 676 7680 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:59:02,634 autoreload 20040 20260 Watching for file changes with StatReloader
+INFO 2025-07-18 13:59:48,378 autoreload 20040 20260 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 13:59:50,595 autoreload 22852 24024 Watching for file changes with StatReloader
+INFO 2025-07-18 13:59:58,979 basehttp 22852 9924 "GET /api/docs/ HTTP/1.1" 200 13460
+INFO 2025-07-18 13:59:59,082 basehttp 22852 14908 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-18 13:59:59,082 basehttp 22852 9924 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-18 13:59:59,293 basehttp 22852 9924 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-18 13:59:59,293 basehttp 22852 23492 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-18 13:59:59,842 basehttp 22852 14908 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 14:00:32,404 basehttp 22852 684 "POST /api/v1/auth/login/ HTTP/1.1" 200 1094
+INFO 2025-07-18 14:01:16,545 autoreload 22852 24024 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 14:01:18,833 autoreload 9428 14192 Watching for file changes with StatReloader
+INFO 2025-07-18 14:06:04,961 autoreload 21740 22892 Watching for file changes with StatReloader
+INFO 2025-07-18 14:06:09,477 basehttp 21740 15896 "GET /api/docs/ HTTP/1.1" 200 13459
+INFO 2025-07-18 14:06:10,179 basehttp 21740 15896 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 14:08:07,033 autoreload 21740 22892 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 14:08:09,893 autoreload 16312 17624 Watching for file changes with StatReloader
+INFO 2025-07-18 14:09:42,632 autoreload 16312 17624 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 14:09:45,433 autoreload 22052 23800 Watching for file changes with StatReloader
+INFO 2025-07-18 14:09:47,084 basehttp 22052 23348 "GET /api/docs/ HTTP/1.1" 200 13458
+INFO 2025-07-18 14:09:47,788 basehttp 22052 23348 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 14:10:52,855 autoreload 22052 23800 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 14:10:56,772 autoreload 6604 17272 Watching for file changes with StatReloader
+INFO 2025-07-18 14:11:23,236 autoreload 6604 17272 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 14:11:25,602 autoreload 21076 16732 Watching for file changes with StatReloader
+INFO 2025-07-18 14:11:30,441 basehttp 21076 2740 "GET /api/docs/ HTTP/1.1" 200 13459
+INFO 2025-07-18 14:11:31,116 basehttp 21076 2740 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 14:12:48,694 autoreload 21076 16732 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\organizations\views.py changed, reloading.
+INFO 2025-07-18 14:12:50,769 autoreload 19496 3188 Watching for file changes with StatReloader
+INFO 2025-07-18 18:22:59,400 autoreload 18732 16160 Watching for file changes with StatReloader
+INFO 2025-07-18 18:24:56,827 basehttp 18732 23708 "GET /api/docs/ HTTP/1.1" 200 13458
+INFO 2025-07-18 18:24:56,965 basehttp 18732 23708 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-18 18:24:56,965 basehttp 18732 22232 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-18 18:24:57,069 basehttp 18732 23708 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-18 18:24:57,086 basehttp 18732 23708 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-18 18:24:57,486 basehttp 18732 22232 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 18:26:26,694 basehttp 18732 17604 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-07-18 18:26:27,495 basehttp 18732 17604 "POST /api/v1/auth/login/ HTTP/1.1" 400 51
+WARNING 2025-07-18 18:26:38,580 basehttp 18732 17604 "POST /api/v1/auth/login/ HTTP/1.1" 400 51
+WARNING 2025-07-18 18:26:42,896 basehttp 18732 17604 "POST /api/v1/auth/login/ HTTP/1.1" 400 51
+WARNING 2025-07-18 18:26:57,200 basehttp 18732 17604 "POST /api/v1/auth/login/ HTTP/1.1" 400 51
+INFO 2025-07-18 18:30:21,099 basehttp 18732 17604 "POST /api/v1/auth/login/ HTTP/1.1" 200 1401
+INFO 2025-07-18 18:44:36,450 basehttp 18732 20612 "OPTIONS /api/v1/certificates/stats/ HTTP/1.1" 200 0
+INFO 2025-07-18 18:44:36,851 basehttp 18732 20612 "GET /api/v1/certificates/stats/ HTTP/1.1" 200 152
+INFO 2025-07-18 18:47:41,521 basehttp 18732 20612 "OPTIONS /api/v1/organizations/ HTTP/1.1" 200 0
+WARNING 2025-07-18 18:47:42,032 basehttp 18732 20612 "POST /api/v1/organizations/ HTTP/1.1" 400 47
+INFO 2025-07-18 18:48:00,661 basehttp 18732 14492 "POST /api/v1/organizations/ HTTP/1.1" 201 498
+INFO 2025-07-18 18:55:40,103 autoreload 21140 8196 Watching for file changes with StatReloader
+INFO 2025-07-18 18:55:47,438 basehttp 21140 12872 "GET /api/docs/ HTTP/1.1" 200 13458
+INFO 2025-07-18 18:55:48,083 basehttp 21140 12872 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 18:58:12,664 basehttp 21140 23084 "OPTIONS /api/v1/certificates/ HTTP/1.1" 200 0
+WARNING 2025-07-18 18:58:12,703 basehttp 21140 23084 "POST /api/v1/certificates/ HTTP/1.1" 401 58
+INFO 2025-07-18 21:05:52,694 basehttp 21140 23748 "GET /api/docs/ HTTP/1.1" 200 13458
+INFO 2025-07-18 21:05:52,794 basehttp 21140 23748 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-18 21:05:52,794 basehttp 21140 14824 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-18 21:05:52,896 basehttp 21140 23748 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-18 21:05:52,920 basehttp 21140 23748 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-18 21:05:53,313 basehttp 21140 14824 "GET /api/schema/ HTTP/1.1" 200 183490
+INFO 2025-07-18 21:08:45,295 basehttp 21140 23672 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2025-07-18 21:08:46,081 basehttp 21140 23672 "POST /api/v1/auth/login/ HTTP/1.1" 200 1401
+INFO 2025-07-18 21:10:32,394 basehttp 21140 23672 "OPTIONS /api/v1/certificates/ HTTP/1.1" 200 0
+WARNING 2025-07-18 21:10:32,451 basehttp 21140 23672 "POST /api/v1/certificates/ HTTP/1.1" 403 63
+INFO 2025-07-18 21:11:02,344 basehttp 21140 23672 "OPTIONS /api/v1/analytics/dashboard/ HTTP/1.1" 200 0
+INFO 2025-07-18 21:11:02,610 basehttp 21140 23672 "GET /api/v1/analytics/dashboard/ HTTP/1.1" 200 227
+INFO 2025-07-18 21:15:35,713 basehttp 21140 23672 "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-07-18 21:15:35,787 basehttp 21140 23672 "GET /api/v1/auth/profile/ HTTP/1.1" 200 763
+WARNING 2025-07-18 21:16:26,455 basehttp 21140 23672 "PUT /api/v1/auth/profile/ HTTP/1.1" 400 148
+WARNING 2025-07-18 21:17:11,122 basehttp 21140 23672 "PATCH /api/v1/auth/profile/ HTTP/1.1" 400 86
+INFO 2025-07-18 21:17:55,311 basehttp 21140 23672 "OPTIONS /api/v1/auth/change-password/ HTTP/1.1" 200 0
+INFO 2025-07-18 21:17:56,361 basehttp 21140 23672 "POST /api/v1/auth/change-password/ HTTP/1.1" 200 48
+INFO 2025-07-18 21:18:12,176 basehttp 21140 23672 "OPTIONS /api/v1/auth/users/?is_active=true HTTP/1.1" 200 0
+INFO 2025-07-18 21:18:12,344 basehttp 21140 23672 "GET /api/v1/auth/users/?is_active=true HTTP/1.1" 200 815
+INFO 2025-07-18 21:19:08,804 basehttp 21140 23672 "OPTIONS /api/v1/notifications/?channel=email HTTP/1.1" 200 0
+INFO 2025-07-18 21:19:08,936 basehttp 21140 23672 "GET /api/v1/notifications/?channel=email HTTP/1.1" 200 52
+INFO 2025-07-18 22:11:25,547 autoreload 11180 16608 Watching for file changes with StatReloader
+INFO 2025-07-18 22:11:39,678 basehttp 11180 11072 "GET /api/docs/ HTTP/1.1" 200 13462
+INFO 2025-07-18 22:11:39,798 basehttp 11180 11072 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-18 22:11:39,947 basehttp 11180 23008 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-07-18 22:11:40,975 basehttp 11180 11072 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-18 22:11:41,039 basehttp 11180 8252 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-18 22:11:41,347 basehttp 11180 23008 "GET /api/schema/ HTTP/1.1" 200 176108
+INFO 2025-07-18 22:24:04,633 autoreload 11180 16608 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\accounts\views.py changed, reloading.
+INFO 2025-07-18 22:24:07,490 autoreload 18868 9240 Watching for file changes with StatReloader
+INFO 2025-07-18 22:24:28,570 autoreload 18868 9240 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\accounts\views.py changed, reloading.
+INFO 2025-07-18 22:24:31,146 autoreload 17840 14296 Watching for file changes with StatReloader
+INFO 2025-07-18 22:24:34,667 basehttp 17840 19864 "GET /api/docs/ HTTP/1.1" 200 13462
+INFO 2025-07-18 22:24:35,391 basehttp 17840 19864 "GET /api/schema/ HTTP/1.1" 200 176108
+INFO 2025-07-18 22:25:28,817 autoreload 17840 14296 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\accounts\views.py changed, reloading.
+INFO 2025-07-18 22:25:30,725 autoreload 22892 19032 Watching for file changes with StatReloader
+INFO 2025-07-18 22:28:32,435 autoreload 22892 19032 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\blockchain\views.py changed, reloading.
+INFO 2025-07-18 22:28:35,585 autoreload 24200 6468 Watching for file changes with StatReloader
+INFO 2025-07-18 22:28:44,612 autoreload 24200 6468 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\blockchain\views.py changed, reloading.
+INFO 2025-07-18 22:28:46,479 autoreload 12188 11676 Watching for file changes with StatReloader
+INFO 2025-07-18 22:29:21,579 autoreload 12188 11676 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\blockchain\views.py changed, reloading.
+INFO 2025-07-18 22:29:23,529 autoreload 24536 23288 Watching for file changes with StatReloader
+INFO 2025-07-18 22:29:45,525 basehttp 24536 21552 "GET /api/docs/ HTTP/1.1" 200 13462
+INFO 2025-07-18 22:29:46,146 basehttp 24536 21552 "GET /api/schema/ HTTP/1.1" 200 176108
+INFO 2025-07-18 22:31:21,708 autoreload 24536 23288 C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\blockchain\views.py changed, reloading.
+INFO 2025-07-18 22:31:23,810 autoreload 23412 7000 Watching for file changes with StatReloader
+INFO 2025-07-18 22:37:29,555 basehttp 23412 3780 "GET /api/docs/ HTTP/1.1" 200 13462
+INFO 2025-07-18 22:37:30,261 basehttp 23412 3780 - Broken pipe from ('127.0.0.1', 51672)
