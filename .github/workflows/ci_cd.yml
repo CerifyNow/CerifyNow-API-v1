@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.12]
+        python-version: [ 3.12 ]
 
     steps:
       - uses: actions/checkout@v4
@@ -44,12 +44,11 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            set -e  # Stop script on first error
-
+            set -e
+            
             cd /home/ubuntu
             REPO_DIR="CerifyNow"
-
-            # Clone or reset repository
+            
             if [ ! -d "$REPO_DIR" ]; then
               echo "Cloning repository..."
               git clone https://github.com/CerifyNow/CerifyNow-API-v1.git $REPO_DIR
@@ -61,35 +60,29 @@ jobs:
               git pull origin main
               cd ..
             fi
-
-            # Navigate into the project
+            
             cd $REPO_DIR
-
-            # Create virtual environment if missing
+            
+            # Create virtual environment if not exists
             if [ ! -d "venv" ]; then
               echo "Creating virtual environment..."
               python3 -m venv venv
             fi
-
-            # Activate virtual environment
-            source venv/bin/activate
-
-            # Install requirements
+            
+            # Install requirements without sourcing activate
             echo "Installing dependencies..."
-            pip install --upgrade pip
-            pip install -r requirements.txt
-
-            # Run migrations (makemigrations is not needed on production)
+            venv/bin/pip install --upgrade pip
+            venv/bin/pip install -r requirements.txt
+            
+            # Run Django management commands
             echo "Running migrations..."
-            python manage.py migrate --noinput
-
-            # Collect static files
+            venv/bin/python manage.py migrate --noinput
+            
             echo "Collecting static files..."
-            python manage.py collectstatic --noinput
-
-            # Restart the Django service
+            venv/bin/python manage.py collectstatic --noinput
+            
             echo "Restarting Django service..."
             sudo systemctl daemon-reload
             sudo systemctl restart cerifynow.service
-
+            
             echo "✅ Deployment complete!"
