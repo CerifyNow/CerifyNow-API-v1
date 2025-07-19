@@ -1,20 +1,28 @@
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework import generics, permissions, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from django.db.models import Count, Q
+from django.db.models import Count
 from django.utils import timezone
-from datetime import datetime, timedelta
+from datetime import timedelta
 from django.contrib.auth import get_user_model
 from certificates.models import Certificate
 from verification.models import VerificationRequest
-from organizations.models import Organization
-from .models import DashboardStats, SystemStats
-from .serializers import (
-    DashboardStatsSerializer, SystemStatsSerializer,
-    AnalyticsOverviewSerializer
-)
+from .models import SystemStats
+from .serializers import SystemStatsSerializer, AnalyticsOverviewSerializer
+
 
 User = get_user_model()
+
+@extend_schema(
+    summary="Dashboard Analytics",
+    description="Hozirgi foydalanuvchining roli asosida statistik ma'lumotlarni qaytaradi (admin, organization yoki student).",
+    responses={
+        200: OpenApiResponse(description="Statistik ma'lumotlar muvaffaqiyatli qaytarildi"),
+        401: OpenApiResponse(description="Avtorizatsiya talab qilinadi")
+    },
+    tags=["Analytics"]
+)
 
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
@@ -91,6 +99,16 @@ def dashboard_analytics(request):
     
     return Response(data)
 
+
+@extend_schema(
+    summary="Analytics Overview (Admin only)",
+    description="Tizimdagi umumiy statistika: foydalanuvchilar, sertifikatlar, verifikatsiyalar, o'sish ko'rsatkichlari va boshqalar (faqat adminlar uchun).",
+    responses={
+        200: OpenApiResponse(description="Barcha statistik ma'lumotlar muvaffaqiyatli qaytarildi"),
+        403: OpenApiResponse(description="Faqat administratorlar ko'rishi mumkin")
+    },
+    tags=["Analytics"]
+)
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def analytics_overview(request):
@@ -152,6 +170,15 @@ def analytics_overview(request):
     serializer = AnalyticsOverviewSerializer(data)
     return Response(serializer.data)
 
+@extend_schema(
+    summary="Certificate Analytics",
+    description="Foydalanuvchining (admin, tashkilot yoki student) sertifikatlari bo'yicha statistik tahlil.",
+    responses={
+        200: OpenApiResponse(description="Sertifikatlar statistikasi muvaffaqiyatli qaytarildi")
+    },
+    tags=["Analytics"]
+)
+
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def certificate_analytics(request):
@@ -208,6 +235,15 @@ def certificate_analytics(request):
         'top_institutions': top_institutions,
     })
 
+@extend_schema(
+    summary="Verification Analytics",
+    description="Verifikatsiyalar bo'yicha kundalik trend, usullar va geografik statistikalar.",
+    responses={
+        200: OpenApiResponse(description="Verifikatsiya statistikasi muvaffaqiyatli qaytarildi")
+    },
+    tags=["Analytics"]
+)
+
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def verification_analytics(request):
@@ -259,6 +295,16 @@ def verification_analytics(request):
         'method_distribution': method_distribution,
         'geographic_distribution': geographic_distribution,
     })
+
+@extend_schema(
+    summary="System Stats (Admin only)",
+    description="Tizimning kunlik statistikasi (faqat administratorlar uchun). So'nggi 30 kunlik yozuvlar qaytariladi.",
+    responses={
+        200: OpenApiResponse(description="System statistikasi muvaffaqiyatli qaytarildi"),
+        403: OpenApiResponse(description="Faqat administratorlar ko'rishi mumkin")
+    },
+    tags=["Analytics"]
+)
 
 class SystemStatsListView(generics.ListAPIView):
     queryset = SystemStats.objects.all()

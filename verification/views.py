@@ -1,7 +1,6 @@
 from rest_framework import generics, status, permissions
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
 from certificates.models import Certificate
 from verification.models import VerificationRequest, VerificationLog
 from verification.serializers import (
@@ -9,10 +8,19 @@ from verification.serializers import (
     VerificationLogSerializer,
     CertificateVerifySerializer)
 from verification.utils import get_client_ip, get_user_agent
-import hashlib
-import json
+from drf_spectacular.utils import (extend_schema, OpenApiResponse, OpenApiParameter)
 
-
+@extend_schema(
+    summary="Verify Certificate",
+    description="Verify a certificate by ID or blockchain hash (QR). Returns certificate info if valid.",
+    request=CertificateVerifySerializer,
+    responses={
+        200: OpenApiResponse(description="Successful verification with certificate details"),
+        400: OpenApiResponse(description="Invalid input or missing ID/hash"),
+        404: OpenApiResponse(description="Certificate not found")
+    },
+    tags=["Verification"]
+)
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def verify_certificate(request):
@@ -145,6 +153,24 @@ def verify_certificate(request):
             'error_code': 'CERTIFICATE_NOT_FOUND'
         })
 
+@extend_schema(
+    summary="Verify via QR",
+    description="Verify a certificate by QR code hash (blockchain_hash).",
+    parameters=[
+        OpenApiParameter(
+            name="qr_hash",
+            type=str,
+            location=OpenApiParameter.PATH,
+            description="QR hash (blockchain_hash) of the certificate"
+        )
+    ],
+    responses={
+        200: OpenApiResponse(description="Certificate verified successfully via QR"),
+        404: OpenApiResponse(description="Certificate not found or hash mismatch")
+    },
+    tags=["Verification"]
+)
+
 
 @api_view(['GET'])
 @permission_classes([permissions.AllowAny])
@@ -211,7 +237,20 @@ def verify_by_qr(request, qr_hash):
             'error_code': 'CERTIFICATE_NOT_FOUND'
         }, status=status.HTTP_404_NOT_FOUND)
 
-
+@extend_schema(
+    summary="Verification History",
+    description="Get verification history for the current authenticated user.",
+    responses={
+        200: OpenApiResponse(response=VerificationRequestSerializer, description="List of verification requests")
+    },
+    parameters=[
+        OpenApiParameter(name="page", type=int, location=OpenApiParameter.QUERY, required=False),
+        OpenApiParameter(name="page_size", type=int, location=OpenApiParameter.QUERY, required=False),
+        OpenApiParameter(name="date_from", type=str, location=OpenApiParameter.QUERY, required=False),
+        OpenApiParameter(name="date_to", type=str, location=OpenApiParameter.QUERY, required=False)
+    ],
+    tags=["Verification"]
+)
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
 def verification_history(request):
@@ -249,6 +288,20 @@ def verification_history(request):
         'count': verifications.count()
     })
 
+@extend_schema(
+    summary="Verification Logs",
+    description="Get list of verification logs (admin, organization, or user filtered).",
+    responses={
+        200: OpenApiResponse(response=VerificationLogSerializer, description="List of logs")
+    },
+    parameters=[
+        OpenApiParameter(name="action", type=str, location=OpenApiParameter.QUERY, required=False),
+        OpenApiParameter(name="certificate__status", type=str, location=OpenApiParameter.QUERY, required=False),
+        OpenApiParameter(name="search", type=str, location=OpenApiParameter.QUERY, required=False),
+        OpenApiParameter(name="ordering", type=str, location=OpenApiParameter.QUERY, required=False),
+    ],
+    tags=["Verification"]
+)
 
 class VerificationLogListView(generics.ListAPIView):
     serializer_class = VerificationLogSerializer
@@ -266,6 +319,17 @@ class VerificationLogListView(generics.ListAPIView):
             return VerificationLog.objects.filter(certificate__issuer=user)
         else:
             return VerificationLog.objects.filter(certificate__holder=user)
+
+
+
+@extend_schema(
+    summary="Verification Statistics",
+    description="Get statistics of verifications: total, successful, failed, QR usage, etc.",
+    responses={
+        200: OpenApiResponse(description="Verification statistics summary")
+    },
+    tags=["Verification"]
+)
 
 
 @api_view(['GET'])

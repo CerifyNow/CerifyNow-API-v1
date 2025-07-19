@@ -172,3 +172,203 @@ INFO 2025-07-18 22:31:21,708 autoreload 24536 23288 C:\Users\Jasmina\PycharmProj
 INFO 2025-07-18 22:31:23,810 autoreload 23412 7000 Watching for file changes with StatReloader
 INFO 2025-07-18 22:37:29,555 basehttp 23412 3780 "GET /api/docs/ HTTP/1.1" 200 13462
 INFO 2025-07-18 22:37:30,261 basehttp 23412 3780 - Broken pipe from ('127.0.0.1', 51672)
+INFO 2025-07-19 13:22:16,329 autoreload 20313 137360277475456 Watching for file changes with StatReloader
+WARNING 2025-07-19 13:22:18,090 basehttp 20313 137360179193536 "GET / HTTP/1.1" 404 12952
+INFO 2025-07-19 13:22:18,135 basehttp 20313 137360099505856 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-07-19 13:22:18,136 basehttp 20313 137360179193536 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-19 13:22:18,141 basehttp 20313 137360179193536 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-19 13:22:18,141 basehttp 20313 137360099505856 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2025-07-19 13:22:33,608 basehttp 20313 137360090064576 "GET / HTTP/1.1" 404 12952
+INFO 2025-07-19 13:22:33,629 basehttp 20313 137360090064576 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-19 13:22:33,630 basehttp 20313 137360081671872 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-07-19 13:22:33,634 basehttp 20313 137360081671872 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-19 13:22:33,677 basehttp 20313 137360081671872 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+WARNING 2025-07-19 13:22:33,754 basehttp 20313 137360081671872 "GET /favicon.ico HTTP/1.1" 404 13014
+WARNING 2025-07-19 13:22:50,122 basehttp 20313 137360081671872 "GET /api/ HTTP/1.1" 404 12986
+INFO 2025-07-19 13:22:50,151 basehttp 20313 137360081671872 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 13:22:50,151 basehttp 20313 137360090064576 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-19 13:22:50,161 basehttp 20313 137360090064576 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-19 13:22:50,202 basehttp 20313 137360081671872 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-19 13:22:53,976 basehttp 20313 137360081671872 "GET /api/docs/ HTTP/1.1" 200 13822
+INFO 2025-07-19 13:22:55,483 basehttp 20313 137360081671872 "GET /api/schema/ HTTP/1.1" 200 176108
+INFO 2025-07-19 13:26:44,868 autoreload 21144 123494665793664 Watching for file changes with StatReloader
+INFO 2025-07-19 13:27:01,401 basehttp 21144 123494568289984 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 13:27:01,423 basehttp 21144 123494568289984 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 13:27:01,425 basehttp 21144 123494553605824 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-19 13:27:01,466 basehttp 21144 123494553605824 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-19 13:27:01,596 basehttp 21144 123494568289984 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-19 13:27:02,135 basehttp 21144 123494553605824 "GET /api/schema/ HTTP/1.1" 200 178841
+INFO 2025-07-19 13:27:54,609 autoreload 21144 123494665793664 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:27:55,202 autoreload 21275 133796775833728 Watching for file changes with StatReloader
+INFO 2025-07-19 13:29:49,708 autoreload 21275 133796775833728 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:29:50,243 autoreload 21503 131943419482240 Watching for file changes with StatReloader
+INFO 2025-07-19 13:30:36,308 autoreload 21503 131943419482240 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:30:36,749 autoreload 21563 131039305425024 Watching for file changes with StatReloader
+INFO 2025-07-19 13:30:51,155 autoreload 21563 131039305425024 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:30:51,599 autoreload 21593 124818557075584 Watching for file changes with StatReloader
+INFO 2025-07-19 13:31:10,101 autoreload 21593 124818557075584 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:31:10,611 autoreload 21616 139443182051456 Watching for file changes with StatReloader
+INFO 2025-07-19 13:32:18,057 autoreload 21616 139443182051456 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:32:18,576 autoreload 21669 129106178928768 Watching for file changes with StatReloader
+INFO 2025-07-19 13:32:30,989 autoreload 21669 129106178928768 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:32:31,515 autoreload 21694 131676399636608 Watching for file changes with StatReloader
+INFO 2025-07-19 13:32:35,958 basehttp 21694 131676300633792 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 13:32:35,976 basehttp 21694 131676300633792 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 13:32:35,978 basehttp 21694 131676285949632 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-19 13:32:36,021 basehttp 21694 131676285949632 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-19 13:32:36,125 basehttp 21694 131676300633792 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-19 13:32:36,738 basehttp 21694 131676285949632 "GET /api/schema/ HTTP/1.1" 200 182839
+INFO 2025-07-19 13:33:25,450 basehttp 21694 131676285949632 "GET /api/docs/ HTTP/1.1" 200 14225
+INFO 2025-07-19 13:33:25,879 basehttp 21694 131676285949632 "GET /api/schema/ HTTP/1.1" 200 182839
+INFO 2025-07-19 13:33:26,033 autoreload 21694 131676399636608 /home/multicode/Public/py/CerifyNow-API/verification/views.py changed, reloading.
+INFO 2025-07-19 13:33:26,513 autoreload 21836 125264962039936 Watching for file changes with StatReloader
+INFO 2025-07-19 13:33:35,671 basehttp 21836 125264863422144 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 13:33:36,344 basehttp 21836 125264863422144 "GET /api/schema/ HTTP/1.1" 200 182794
+INFO 2025-07-19 15:08:26,605 autoreload 11228 132481335021696 Watching for file changes with StatReloader
+INFO 2025-07-19 15:08:56,503 autoreload 11576 138333118509184 Watching for file changes with StatReloader
+INFO 2025-07-19 15:08:58,869 basehttp 11576 138333019694784 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:08:58,912 basehttp 11576 138333019694784 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-19 15:08:58,921 basehttp 11576 138333019694784 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 15:08:58,970 basehttp 11576 138333019694784 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-19 15:08:59,086 basehttp 11576 138333006059200 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-19 15:09:00,487 basehttp 11576 138333019694784 "GET /api/schema/ HTTP/1.1" 200 182790
+INFO 2025-07-19 15:09:38,038 basehttp 11576 138333019694784 "GET /api/docs/ HTTP/1.1" 200 14226
+INFO 2025-07-19 15:09:38,098 autoreload 11576 138333118509184 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-19 15:09:39,285 autoreload 11722 135243346243712 Watching for file changes with StatReloader
+INFO 2025-07-19 15:09:40,303 basehttp 11722 135243247904448 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:09:41,889 basehttp 11722 135243247904448 "GET /api/schema/ HTTP/1.1" 200 182814
+INFO 2025-07-19 15:12:31,757 autoreload 11722 135243346243712 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-19 15:12:33,176 autoreload 12147 133433986809984 Watching for file changes with StatReloader
+INFO 2025-07-19 15:12:34,282 basehttp 12147 133433889121984 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:12:35,387 basehttp 12147 133433889121984 "GET /api/schema/ HTTP/1.1" 200 183714
+INFO 2025-07-19 15:13:30,078 autoreload 12147 133433986809984 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-19 15:13:30,951 autoreload 12261 130389543268480 Watching for file changes with StatReloader
+INFO 2025-07-19 15:13:37,505 autoreload 12261 130389543268480 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-19 15:13:38,520 autoreload 12284 128381644710016 Watching for file changes with StatReloader
+INFO 2025-07-19 15:13:39,479 basehttp 12284 128381471422144 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:13:40,984 basehttp 12284 128381471422144 "GET /api/schema/ HTTP/1.1" 200 184794
+INFO 2025-07-19 15:16:27,249 autoreload 12284 128381644710016 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-19 15:16:28,352 autoreload 12509 130360095625344 Watching for file changes with StatReloader
+INFO 2025-07-19 15:16:29,545 basehttp 12509 130359998015168 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:16:30,759 basehttp 12509 130359998015168 "GET /api/schema/ HTTP/1.1" 200 183003
+INFO 2025-07-19 15:18:19,786 basehttp 12509 130359998015168 "GET /api/docs/ HTTP/1.1" 200 14226
+INFO 2025-07-19 15:18:20,506 basehttp 12509 130359998015168 "GET /api/schema/ HTTP/1.1" 200 183003
+INFO 2025-07-19 15:21:59,589 autoreload 12509 130360095625344 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-19 15:22:00,716 autoreload 12904 126974507966592 Watching for file changes with StatReloader
+INFO 2025-07-19 15:22:23,768 autoreload 12904 126974507966592 /home/multicode/Public/py/CerifyNow-API/accounts/urls.py changed, reloading.
+INFO 2025-07-19 15:22:24,542 autoreload 12960 127244904689792 Watching for file changes with StatReloader
+INFO 2025-07-19 15:22:25,624 basehttp 12960 127244806645440 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:22:25,653 basehttp 12960 127244806645440 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 15:22:25,659 basehttp 12960 127244793009856 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-19 15:22:25,699 basehttp 12960 127244793009856 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-19 15:22:25,846 basehttp 12960 127244806645440 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-19 15:22:27,041 basehttp 12960 127244793009856 "GET /api/schema/ HTTP/1.1" 200 182388
+INFO 2025-07-19 15:24:40,955 autoreload 12960 127244904689792 /home/multicode/Public/py/CerifyNow-API/analytics/views.py changed, reloading.
+INFO 2025-07-19 15:24:41,959 autoreload 13231 132534403637376 Watching for file changes with StatReloader
+INFO 2025-07-19 15:24:49,588 autoreload 13231 132534403637376 /home/multicode/Public/py/CerifyNow-API/analytics/views.py changed, reloading.
+INFO 2025-07-19 15:24:50,588 autoreload 13249 136951814914176 Watching for file changes with StatReloader
+INFO 2025-07-19 15:24:56,301 autoreload 13249 136951814914176 /home/multicode/Public/py/CerifyNow-API/analytics/views.py changed, reloading.
+INFO 2025-07-19 15:24:57,358 autoreload 13268 123259921801344 Watching for file changes with StatReloader
+INFO 2025-07-19 15:25:16,377 autoreload 13268 123259921801344 /home/multicode/Public/py/CerifyNow-API/analytics/views.py changed, reloading.
+INFO 2025-07-19 15:25:17,242 autoreload 13299 130702606839936 Watching for file changes with StatReloader
+INFO 2025-07-19 15:25:32,046 autoreload 13299 130702606839936 /home/multicode/Public/py/CerifyNow-API/analytics/views.py changed, reloading.
+INFO 2025-07-19 15:25:32,901 autoreload 13318 134215267602560 Watching for file changes with StatReloader
+INFO 2025-07-19 15:25:38,449 autoreload 13318 134215267602560 /home/multicode/Public/py/CerifyNow-API/analytics/views.py changed, reloading.
+INFO 2025-07-19 15:25:39,468 autoreload 13335 127386873426048 Watching for file changes with StatReloader
+INFO 2025-07-19 15:25:41,031 basehttp 13335 127386775447232 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 15:25:42,133 basehttp 13335 127386775447232 "GET /api/schema/ HTTP/1.1" 200 179335
+INFO 2025-07-19 15:27:17,534 autoreload 13335 127386873426048 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:27:18,714 autoreload 13539 126391929254016 Watching for file changes with StatReloader
+INFO 2025-07-19 15:27:20,061 autoreload 13539 126391929254016 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:27:21,051 autoreload 13560 130298324336768 Watching for file changes with StatReloader
+INFO 2025-07-19 15:27:45,110 autoreload 13560 130298324336768 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:27:46,528 autoreload 13585 137381526794368 Watching for file changes with StatReloader
+INFO 2025-07-19 15:27:55,356 autoreload 13585 137381526794368 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:27:56,415 autoreload 13609 138008328454272 Watching for file changes with StatReloader
+INFO 2025-07-19 15:28:03,013 autoreload 13609 138008328454272 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:28:03,993 autoreload 13634 135300790026368 Watching for file changes with StatReloader
+INFO 2025-07-19 15:28:27,155 autoreload 13634 135300790026368 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:28:28,112 autoreload 13673 124898381095040 Watching for file changes with StatReloader
+INFO 2025-07-19 15:28:32,659 autoreload 13673 124898381095040 /home/multicode/Public/py/CerifyNow-API/blockchain/views.py changed, reloading.
+INFO 2025-07-19 15:28:33,808 autoreload 13694 133829521281152 Watching for file changes with StatReloader
+INFO 2025-07-19 15:28:35,070 basehttp 13694 133829424572096 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:28:36,302 basehttp 13694 133829416179392 "GET /api/schema/ HTTP/1.1" 200 180474
+INFO 2025-07-19 15:31:00,126 autoreload 13694 133829521281152 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:31:01,398 autoreload 13966 126012012318848 Watching for file changes with StatReloader
+INFO 2025-07-19 15:31:14,151 autoreload 13966 126012012318848 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:31:14,995 autoreload 13986 124370199777408 Watching for file changes with StatReloader
+INFO 2025-07-19 15:31:27,782 autoreload 13986 124370199777408 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:31:28,776 autoreload 14009 129754877915264 Watching for file changes with StatReloader
+INFO 2025-07-19 15:31:40,466 autoreload 14009 129754877915264 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:31:41,427 autoreload 14030 136019838333056 Watching for file changes with StatReloader
+INFO 2025-07-19 15:31:43,775 basehttp 14030 136019668104896 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:31:44,950 basehttp 14030 136019668104896 "GET /api/schema/ HTTP/1.1" 200 184256
+INFO 2025-07-19 15:31:49,555 basehttp 14030 136019668104896 "GET /api/docs/ HTTP/1.1" 200 14225
+INFO 2025-07-19 15:31:50,306 basehttp 14030 136019668104896 "GET /api/schema/ HTTP/1.1" 200 184256
+INFO 2025-07-19 15:32:16,751 basehttp 14030 136019668104896 "GET /api/docs/ HTTP/1.1" 200 14227
+INFO 2025-07-19 15:32:17,459 autoreload 14030 136019838333056 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:32:18,432 autoreload 14129 127421974175872 Watching for file changes with StatReloader
+INFO 2025-07-19 15:32:19,557 basehttp 14129 127421876528832 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:32:20,985 basehttp 14129 127421876528832 "GET /api/schema/ HTTP/1.1" 200 184223
+INFO 2025-07-19 15:32:55,279 autoreload 14129 127421974175872 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:32:56,355 autoreload 14229 132986950701184 Watching for file changes with StatReloader
+INFO 2025-07-19 15:32:57,436 basehttp 14229 132986852861632 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:32:58,903 basehttp 14229 132986852861632 "GET /api/schema/ HTTP/1.1" 200 184225
+INFO 2025-07-19 15:33:18,910 basehttp 14229 132986852861632 "GET /api/docs/ HTTP/1.1" 200 14226
+ERROR 2025-07-19 15:33:20,379 basehttp 14229 132986607494848 "GET /api/docs/ HTTP/1.1" 500 155275
+INFO 2025-07-19 15:33:21,380 basehttp 14229 132986852861632 "GET /api/docs/ HTTP/1.1" 200 14226
+INFO 2025-07-19 15:33:22,121 basehttp 14229 132986852861632 "GET /api/schema/ HTTP/1.1" 200 184225
+INFO 2025-07-19 15:33:58,172 autoreload 14229 132986950701184 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:33:59,392 autoreload 14362 128933288988800 Watching for file changes with StatReloader
+INFO 2025-07-19 15:34:00,659 basehttp 14362 128933191214784 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:34:01,767 basehttp 14362 128933191214784 "GET /api/schema/ HTTP/1.1" 200 184226
+INFO 2025-07-19 15:35:15,843 basehttp 14362 128933191214784 "GET /api/docs/ HTTP/1.1" 200 14226
+INFO 2025-07-19 15:35:15,877 basehttp 14362 128933191214784 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 15:35:15,881 basehttp 14362 128933103138496 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-19 15:35:15,945 basehttp 14362 128933103138496 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-19 15:35:16,117 basehttp 14362 128933191214784 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-19 15:35:16,775 basehttp 14362 128933103138496 "GET /api/schema/ HTTP/1.1" 200 184226
+INFO 2025-07-19 15:37:47,215 autoreload 14362 128933288988800 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:37:48,292 autoreload 14757 132151232417920 Watching for file changes with StatReloader
+INFO 2025-07-19 15:38:04,015 autoreload 14757 132151232417920 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:38:05,063 autoreload 14783 125246847017088 Watching for file changes with StatReloader
+INFO 2025-07-19 15:38:22,934 autoreload 14783 125246847017088 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:38:23,861 autoreload 14808 134878922432640 Watching for file changes with StatReloader
+INFO 2025-07-19 15:38:33,550 autoreload 14808 134878922432640 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:38:34,357 autoreload 14826 137212636692608 Watching for file changes with StatReloader
+INFO 2025-07-19 15:38:40,831 autoreload 14826 137212636692608 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:38:41,875 autoreload 14850 128588244164736 Watching for file changes with StatReloader
+INFO 2025-07-19 15:38:57,567 autoreload 14894 137241488384128 Watching for file changes with StatReloader
+INFO 2025-07-19 15:39:47,220 autoreload 14894 137241488384128 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:39:47,950 autoreload 14934 130152526958720 Watching for file changes with StatReloader
+INFO 2025-07-19 15:40:10,822 autoreload 14934 130152526958720 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:40:11,570 autoreload 14964 125694620442752 Watching for file changes with StatReloader
+INFO 2025-07-19 15:40:19,679 autoreload 14997 135820588941440 Watching for file changes with StatReloader
+INFO 2025-07-19 15:40:20,949 basehttp 14997 135820421887680 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:40:22,410 basehttp 14997 135820421887680 "GET /api/schema/ HTTP/1.1" 200 186470
+INFO 2025-07-19 15:41:48,403 autoreload 14997 135820588941440 /home/multicode/Public/py/CerifyNow-API/notifications/views.py changed, reloading.
+INFO 2025-07-19 15:41:49,687 autoreload 15136 132631027765376 Watching for file changes with StatReloader
+INFO 2025-07-19 15:41:50,513 basehttp 15136 132630929467072 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 15:41:51,861 basehttp 15136 132630929467072 "GET /api/schema/ HTTP/1.1" 200 186470
+INFO 2025-07-19 15:43:04,204 autoreload 15136 132631027765376 /home/multicode/Public/py/CerifyNow-API/organizations/views.py changed, reloading.
+INFO 2025-07-19 15:43:05,144 autoreload 15284 140450976641152 Watching for file changes with StatReloader
+INFO 2025-07-19 15:43:31,410 autoreload 15284 140450976641152 /home/multicode/Public/py/CerifyNow-API/organizations/views.py changed, reloading.
+INFO 2025-07-19 15:43:32,535 autoreload 15308 132206837227648 Watching for file changes with StatReloader
+INFO 2025-07-19 15:43:56,514 autoreload 15308 132206837227648 /home/multicode/Public/py/CerifyNow-API/organizations/views.py changed, reloading.
+INFO 2025-07-19 15:43:57,444 autoreload 15342 126568665047168 Watching for file changes with StatReloader
+INFO 2025-07-19 15:44:09,248 autoreload 15342 126568665047168 /home/multicode/Public/py/CerifyNow-API/organizations/views.py changed, reloading.
+INFO 2025-07-19 15:44:10,083 autoreload 15362 134231324647552 Watching for file changes with StatReloader
+INFO 2025-07-19 15:44:14,595 autoreload 15362 134231324647552 /home/multicode/Public/py/CerifyNow-API/organizations/views.py changed, reloading.
+INFO 2025-07-19 15:44:15,665 autoreload 15382 139004661014656 Watching for file changes with StatReloader
+INFO 2025-07-19 15:44:16,633 basehttp 15382 139004563416768 "GET /api/docs/ HTTP/1.1" 200 14229
+INFO 2025-07-19 15:44:18,063 basehttp 15382 139004563416768 "GET /api/schema/ HTTP/1.1" 200 186994
+INFO 2025-07-19 15:44:51,930 basehttp 15382 139004563416768 "GET /api/docs/ HTTP/1.1" 200 14227
+INFO 2025-07-19 15:44:52,683 basehttp 15382 139004563416768 "GET /api/schema/ HTTP/1.1" 200 186994
+INFO 2025-07-19 15:44:52,688 autoreload 15382 139004661014656 /home/multicode/Public/py/CerifyNow-API/organizations/views.py changed, reloading.
+INFO 2025-07-19 15:44:53,781 autoreload 15492 131077512044672 Watching for file changes with StatReloader
+INFO 2025-07-19 15:44:57,097 basehttp 15492 131077413791424 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 15:44:58,439 basehttp 15492 131077413791424 "GET /api/schema/ HTTP/1.1" 200 187001
+INFO 2025-07-19 15:46:12,296 autoreload 15492 131077512044672 /home/multicode/Public/py/CerifyNow-API/certificates/views.py changed, reloading.
+INFO 2025-07-19 15:46:13,434 autoreload 15619 128082759430272 Watching for file changes with StatReloader
+INFO 2025-07-19 15:46:14,230 basehttp 15619 128082661861056 "GET /api/docs/ HTTP/1.1" 200 14228
+INFO 2025-07-19 15:46:15,621 basehttp 15619 128082661861056 "GET /api/schema/ HTTP/1.1" 200 189190

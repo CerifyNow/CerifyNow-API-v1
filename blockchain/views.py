@@ -1,3 +1,4 @@
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework import generics, permissions, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -6,6 +7,12 @@ from .models import BlockchainTransaction, BlockchainBlock, SmartContract
 from .serializers import (
     BlockchainTransactionSerializer, BlockchainBlockSerializer,
     SmartContractSerializer
+)
+
+@extend_schema(
+    summary="List Blockchain Transactions",
+    description="Retrieve a list of blockchain transactions filtered by type, status, or certificate.",
+    tags=["Blockchain"]
 )
 
 class BlockchainTransactionListView(generics.ListAPIView):
@@ -24,17 +31,39 @@ class BlockchainTransactionListView(generics.ListAPIView):
         else:
             return BlockchainTransaction.objects.filter(certificate__holder=user)
 
+@extend_schema(
+    summary="Retrieve Transaction Details",
+    description="Retrieve details of a blockchain transaction by its transaction hash.",
+    tags=["Blockchain"]
+)
+
 class BlockchainTransactionDetailView(generics.RetrieveAPIView):
     queryset = BlockchainTransaction.objects.all()
     serializer_class = BlockchainTransactionSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'transaction_hash'
 
+@extend_schema(
+    summary="List Blockchain Blocks",
+    description="Retrieve a list of blockchain blocks ordered by block number.",
+    tags=["Blockchain"]
+)
+
 class BlockchainBlockListView(generics.ListAPIView):
     queryset = BlockchainBlock.objects.all()
     serializer_class = BlockchainBlockSerializer
     permission_classes = [permissions.IsAuthenticated]
     ordering = ['-block_number']
+
+@extend_schema(
+    summary="Blockchain Statistics",
+    description="Get aggregate statistics about blockchain activity. Only admins can access this.",
+    tags=["Blockchain"],
+    responses={
+        200: OpenApiResponse(description="Blockchain statistics returned successfully"),
+        403: OpenApiResponse(description="Permission denied for non-admin users")
+    }
+)
 
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
@@ -86,6 +115,16 @@ def blockchain_stats(request):
     
     return Response(stats)
 
+@extend_schema(
+    summary="Verify Transaction",
+    description="Verify and confirm a pending blockchain transaction by its hash.",
+    tags=["Blockchain"],
+    responses={
+        200: OpenApiResponse(description="Transaction successfully verified."),
+        404: OpenApiResponse(description="Transaction not found.")
+    }
+)
+
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
 def verify_transaction(request, transaction_hash):
@@ -110,6 +149,12 @@ def verify_transaction(request, transaction_hash):
             {'error': 'Tranzaksiya topilmadi'},
             status=status.HTTP_404_NOT_FOUND
         )
+
+@extend_schema(
+    summary="List Smart Contracts",
+    description="Retrieve a list of active smart contracts filtered by type or verification status.",
+    tags=["Blockchain"]
+)
 
 class SmartContractListView(generics.ListAPIView):
     queryset = SmartContract.objects.filter(is_active=True)

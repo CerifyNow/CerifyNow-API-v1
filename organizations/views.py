@@ -10,7 +10,17 @@ from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParamet
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 
 
-
+@extend_schema(
+        summary="List or Create Organizations",
+        description="Authenticated users can list organizations. Admins can create new organizations.",
+        request=OrganizationCreateSerializer,
+        responses={
+            200: OpenApiResponse(response=OrganizationSerializer, description="List of organizations"),
+            201: OpenApiResponse(response=OrganizationSerializer, description="New organization created"),
+            400: OpenApiResponse(description="Invalid input")
+        },
+        tags=["Organizations"]
+    )
 class OrganizationListCreateView(generics.ListCreateAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
     permission_classes = [permissions.IsAuthenticated]
@@ -20,17 +30,6 @@ class OrganizationListCreateView(generics.ListCreateAPIView):
     ordering_fields = ['name', 'created_at']
     ordering = ['name']
 
-    @extend_schema(
-        summary="List or Create Organizations",
-        description="Authenticated users can list organizations. Admins can create new organizations.",
-        request=OrganizationCreateSerializer,
-        responses={
-            200: OpenApiResponse(response=OrganizationSerializer, description="List of organizations"),
-            201: OpenApiResponse(response=OrganizationSerializer, description="New organization created"),
-            400: OpenApiResponse(description="Invalid input")
-        },
-        tags=["Organization"]
-    )
     
     def get_serializer_class(self):
         if self.request.method == 'POST':
@@ -46,13 +45,7 @@ class OrganizationListCreateView(generics.ListCreateAPIView):
         else:
             return Organization.objects.filter(is_verified=True, is_active=True)
 
-class OrganizationDetailView(generics.RetrieveUpdateDestroyAPIView):
-    parser_classes = (MultiPartParser, FormParser, JSONParser)
-    permission_classes = [permissions.IsAuthenticated]
-    queryset = Organization.objects.all()
-    serializer_class = OrganizationSerializer
-
-    @extend_schema(
+@extend_schema(
         summary="Retrieve, Update, or Delete Organization",
         description="Retrieve, update or delete a specific organization by ID.",
         responses={
@@ -60,20 +53,24 @@ class OrganizationDetailView(generics.RetrieveUpdateDestroyAPIView):
             404: OpenApiResponse(description="Organization not found"),
             403: OpenApiResponse(description="Permission denied")
         },
-        tags=["Organization"]
+        tags=["Organizations"]
     )
+
+class OrganizationDetailView(generics.RetrieveUpdateDestroyAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Organization.objects.all()
+    serializer_class = OrganizationSerializer
+
+
     
     def get_permissions(self):
         if self.request.method in ['PUT', 'PATCH', 'DELETE']:
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
 
-class OrganizationMembershipListView(generics.ListAPIView):
-    parser_classes = (MultiPartParser, FormParser, JSONParser)
-    serializer_class = OrganizationMembershipSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
-    @extend_schema(
+@extend_schema(
         summary="List Members of an Organization",
         description="Returns a list of all active members of a specific organization.",
         parameters=[
@@ -83,14 +80,31 @@ class OrganizationMembershipListView(generics.ListAPIView):
             200: OpenApiResponse(response=OrganizationMembershipSerializer, description="List of members"),
             404: OpenApiResponse(description="Organization not found")
         },
-        tags=["Organization Membership"]
+        tags=["Organizations"]
     )
+class OrganizationMembershipListView(generics.ListAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
+    serializer_class = OrganizationMembershipSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
     def get_queryset(self):
         organization_id = self.kwargs.get('organization_id')
         return OrganizationMembership.objects.filter(
             organization_id=organization_id,
             is_active=True
         )
+
+
+@extend_schema(
+    summary="Join Organization",
+    description="Authenticated user joins an organization by organization ID.",
+    responses={
+        200: OpenApiResponse(description="Successfully joined organization"),
+        400: OpenApiResponse(description="Already a member"),
+        404: OpenApiResponse(description="Organization not found")
+    },
+    tags=["Organizations"]
+)
 
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
@@ -128,6 +142,17 @@ def join_organization(request, organization_id):
             {'error': 'Tashkilot topilmadi'},
             status=status.HTTP_404_NOT_FOUND
         )
+
+@extend_schema(
+    summary="Leave Organization",
+    description="Authenticated user leaves an organization by organization ID.",
+    responses={
+        200: OpenApiResponse(description="Successfully left organization"),
+        404: OpenApiResponse(description="Membership not found")
+    },
+    tags=["Organizations"]
+)
+
 
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])

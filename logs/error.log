@@ -205,3 +205,183 @@ Traceback (most recent call last):
   File "C:\Users\Jasmina\PycharmProjects\CerifyNow-API-org\.venv\Lib\site-packages\rest_framework\serializers.py", line 1340, in build_unknown_field
     raise ImproperlyConfigured(
 django.core.exceptions.ImproperlyConfigured: Field name `organization_name` is not valid for model `User`.
+ERROR 2025-07-19 15:33:20,315 log 14229 132986831886016 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 58, in __call__
+    response = toolbar.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/timer.py", line 65, in process_request
+    return super().process_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/headers.py", line 46, in process_request
+    return super().process_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 114, in process_request
+    response = super().process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/redirects.py", line 17, in process_request
+    response = super().process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/profiling.py", line 144, in process_request
+    return self.profiler.runcall(super().process_request, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/cProfile.py", line 109, in runcall
+    self.enable()
+ValueError: Another profiling tool is already active
+ERROR 2025-07-19 15:33:20,316 log 14229 132986615887552 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 58, in __call__
+    response = toolbar.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/timer.py", line 65, in process_request
+    return super().process_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/headers.py", line 46, in process_request
+    return super().process_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 114, in process_request
+    response = super().process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/redirects.py", line 17, in process_request
+    response = super().process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/profiling.py", line 144, in process_request
+    return self.profiler.runcall(super().process_request, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/cProfile.py", line 109, in runcall
+    self.enable()
+ValueError: Another profiling tool is already active
+ERROR 2025-07-19 15:33:20,372 log 14229 132986607494848 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 58, in __call__
+    response = toolbar.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/timer.py", line 65, in process_request
+    return super().process_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/headers.py", line 46, in process_request
+    return super().process_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 114, in process_request
+    response = super().process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/redirects.py", line 17, in process_request
+    response = super().process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 204, in process_request
+    return self.get_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/multicode/Public/py/CerifyNow-API/.venv/lib/python3.12/site-packages/debug_toolbar/panels/profiling.py", line 144, in process_request
+    return self.profiler.runcall(super().process_request, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/cProfile.py", line 109, in runcall
+    self.enable()
+ValueError: Another profiling tool is already active

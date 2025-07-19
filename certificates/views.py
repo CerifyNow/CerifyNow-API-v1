@@ -19,6 +19,18 @@ from certificates.permissions import (
 )
 
 
+@extend_schema(
+    summary="List and Create Certificates",
+    description="List all certificates for the current user based on their role or create a new certificate (issuer only).",
+    request=CertificateCreateSerializer,
+    responses={
+        200: OpenApiResponse(response=CertificateSerializer, description="List of certificates"),
+        201: OpenApiResponse(response=CertificateSerializer, description="Certificate successfully created"),
+        400: OpenApiResponse(description="Invalid input data"),
+        403: OpenApiResponse(description="Permission denied"),
+    },
+    tags=["Certificates"]
+)
 class CertificateListCreateView(generics.ListCreateAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
     serializer_class = CertificateSerializer
@@ -27,19 +39,6 @@ class CertificateListCreateView(generics.ListCreateAPIView):
     search_fields = ['title', 'certificate_id', 'holder__first_name', 'holder__last_name']
     ordering_fields = ['created_at', 'issue_date', 'title']
     ordering = ['-created_at']
-
-    @extend_schema(
-        summary="List and Create Certificates",
-        description="List all certificates for the current user based on their role or create a new certificate (issuer only).",
-        request=CertificateCreateSerializer,
-        responses={
-            200: OpenApiResponse(response=CertificateSerializer, description="List of certificates"),
-            201: OpenApiResponse(response=CertificateSerializer, description="Certificate successfully created"),
-            400: OpenApiResponse(description="Invalid input data"),
-            403: OpenApiResponse(description="Permission denied"),
-        },
-        tags=["Certificate Management"]
-    )
 
     def get_queryset(self):
         user = self.request.user
@@ -65,13 +64,7 @@ class CertificateListCreateView(generics.ListCreateAPIView):
         return [permissions.IsAuthenticated()]
 
 
-class CertificateDetailView(generics.RetrieveUpdateDestroyAPIView):
-    parser_classes = (MultiPartParser, FormParser, JSONParser)
-    queryset = Certificate.objects.all()
-    serializer_class = CertificateSerializer
-    permission_classes = [IsOwnerOrIssuerOrCanView]
-
-    @extend_schema(
+@extend_schema(
         summary="Retrieve, Update or Delete a Certificate",
         description="Retrieve certificate details, or update/delete them if you have the proper permissions.",
         responses={
@@ -82,8 +75,14 @@ class CertificateDetailView(generics.RetrieveUpdateDestroyAPIView):
             404: OpenApiResponse(description="Certificate not found"),
         },
         request=CertificateSerializer,
-        tags=["Certificate Management"]
+        tags=["Certificates"]
     )
+
+class CertificateDetailView(generics.RetrieveUpdateDestroyAPIView):
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
+    queryset = Certificate.objects.all()
+    serializer_class = CertificateSerializer
+    permission_classes = [IsOwnerOrIssuerOrCanView]
 
     def get_permissions(self):
         if self.request.method in ['PUT', 'PATCH', 'DELETE']:
@@ -104,6 +103,15 @@ class CertificateDetailView(generics.RetrieveUpdateDestroyAPIView):
             raise permissions.PermissionDenied("Faqat superadmin sertifikatni o'chira oladi")
         instance.delete()
 
+@extend_schema(
+    summary="Get Certificate Stats",
+    description="Return total, verified, pending, revoked certificates and verification counts based on user role.",
+    responses={
+        200: OpenApiResponse(response=CertificateStatsSerializer, description="Certificate statistics"),
+        403: OpenApiResponse(description="Permission denied")
+    },
+    tags=["Certificates"]
+)
 
 @api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
@@ -161,6 +169,17 @@ def certificate_stats(request):
     return Response(serializer.data)
 
 
+@extend_schema(
+    summary="Bulk Create Certificates",
+    description="Create multiple certificates in one request. Only institution admins can perform this.",
+    request=CertificateCreateSerializer(many=True),
+    responses={
+        200: OpenApiResponse(description="Certificates created with details and errors if any"),
+        403: OpenApiResponse(description="Permission denied")
+    },
+    tags=["Certificates"]
+)
+
 @api_view(['POST'])
 @permission_classes([IsInstitutionAdminPermission])
 def bulk_create_certificates(request):
@@ -191,6 +210,17 @@ def bulk_create_certificates(request):
         'errors': errors
     })
 
+
+@extend_schema(
+    summary="Revoke a Certificate",
+    description="Revoke a certificate (set as 'revoked' and not verified). Only superadmin can revoke.",
+    responses={
+        200: OpenApiResponse(response=CertificateSerializer, description="Certificate revoked"),
+        404: OpenApiResponse(description="Certificate not found"),
+        403: OpenApiResponse(description="Permission denied")
+    },
+    tags=["Certificates"]
+)
 
 @api_view(['POST'])
 @permission_classes([IsSuperAdminPermission])
