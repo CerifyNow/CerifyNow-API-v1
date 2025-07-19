@@ -31,4 +31,8 @@ next-env.d.ts
 __pycache__/
 *.pyc
 *.log
-migrations/
+
+# Ignore all migration files except __init__.py
+**/migrations/*.py
+**/__pycache__/
+!**/migrations/__init__.py
