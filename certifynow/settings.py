@@ -121,6 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 LANGUAGE_CODE = 'uz-uz'
 TIME_ZONE = 'Asia/Tashkent'
