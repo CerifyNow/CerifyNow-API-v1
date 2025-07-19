@@ -63,7 +63,7 @@ jobs:
               cd ..
             fi
 
-            cd $REPO_DIR
+            cd /home/ubuntu/$REPO_DIR
 
             if [ ! -d "venv" ]; then
               echo "🐍 Creating virtual environment..."
