@@ -2,6 +2,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from organizations.models import Organization, OrganizationMembership
+from organizations.permissions import InstitutionPermissions
 from organizations.serializers import (
     OrganizationSerializer, OrganizationCreateSerializer,
     OrganizationMembershipSerializer
@@ -23,7 +24,7 @@ from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
     )
 class OrganizationListCreateView(generics.ListCreateAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, InstitutionPermissions]
     queryset = Organization.objects.filter(is_active=True)
     filterset_fields = ['organization_type', 'is_verified', 'city', 'region']
     search_fields = ['name', 'short_name', 'email']
@@ -58,7 +59,7 @@ class OrganizationListCreateView(generics.ListCreateAPIView):
 
 class OrganizationDetailView(generics.RetrieveUpdateDestroyAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, InstitutionPermissions]
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
 
@@ -85,7 +86,7 @@ class OrganizationDetailView(generics.RetrieveUpdateDestroyAPIView):
 class OrganizationMembershipListView(generics.ListAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
     serializer_class = OrganizationMembershipSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, InstitutionPermissions]
 
     def get_queryset(self):
         organization_id = self.kwargs.get('organization_id')
@@ -107,7 +108,7 @@ class OrganizationMembershipListView(generics.ListAPIView):
 )
 
 @api_view(['POST'])
-@permission_classes([permissions.IsAuthenticated])
+@permission_classes([permissions.IsAuthenticated, InstitutionPermissions])
 def join_organization(request, organization_id):
     """Join an organization"""
     try:
@@ -155,7 +156,7 @@ def join_organization(request, organization_id):
 
 
 @api_view(['POST'])
-@permission_classes([permissions.IsAuthenticated])
+@permission_classes([permissions.IsAuthenticated, InstitutionPermissions])
 def leave_organization(request, organization_id):
     """Leave an organization"""
     try:

@@ -10,6 +10,7 @@ from drf_spectacular.types import OpenApiTypes
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework_simplejwt.views import TokenRefreshView
 
+from accounts.permissions import UserPermissions
 from accounts.serializers import (
     UserRegistrationSerializer, UserLoginSerializer, 
     UserSerializer, PasswordChangeSerializer
@@ -56,7 +57,7 @@ class RegisterView(generics.CreateAPIView):
 
 class LoginView(generics.GenericAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
-    permission_classes = [AllowAny]
+    permission_classes = [AllowAny, UserPermissions]
     serializer_class = UserLoginSerializer
 
     @extend_schema(
