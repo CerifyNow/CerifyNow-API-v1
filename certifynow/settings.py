@@ -205,23 +205,22 @@ SIMPLE_JWT = {
 }
 
 # CORS Configuration - Updated
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://certifynow.uz",
-    "https://www.certifynow.uz",
-]
+CORS_ALLOWED_ORIGINS = config(
+    'CORS_ALLOWED_ORIGINS',
+    default='http://localhost:3000,http://127.0.0.1:3000,https://certifynow.uz,https://www.certifynow.uz',
+    cast=lambda v: [s.strip() for s in v.split(',')]
+)
+
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only in development
 
 # CSRF Configuration
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://certifynow.uz",
-    "https://www.certifynow.uz",
-]
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS',
+    default='http://localhost:3000,http://127.0.0.1:3000',
+    cast=lambda v: [s.strip() for s in v.split(',')]
+)
 
 # Security Settings for Production
 if not DEBUG:
@@ -405,7 +404,11 @@ QR_CODE_SIZE = config('QR_CODE_SIZE', default=200, cast=int)
 MAX_CERTIFICATES_PER_BULK = config('MAX_CERTIFICATES_PER_BULK', default=100, cast=int)
 
 # Notification Settings
-NOTIFICATION_CHANNELS = ['email', 'sms', 'push']
+NOTIFICATION_CHANNELS = config(
+    'NOTIFICATION_CHANNELS',
+    default='email,sms,push',
+    cast=lambda v: [s.strip() for s in v.split(',')]
+)
 EMAIL_VERIFICATION_REQUIRED = config('EMAIL_VERIFICATION_REQUIRED', default=True, cast=bool)
 
 # API Rate Limiting
