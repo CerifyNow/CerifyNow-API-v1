@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Organization, OrganizationMembership
-
+from django.utils.translation import gettext_lazy as _
 
 @admin.register(Organization)
 class OrganizationAdmin(admin.ModelAdmin):
