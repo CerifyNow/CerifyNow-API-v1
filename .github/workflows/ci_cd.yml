@@ -87,8 +87,7 @@ jobs:
 
             # Run Django migrations
             echo "Running migrations..."
-            python3 manage.py makemigrations institutions
-            python3 manage.py makemigrations users
+            python3 manage.py makemigrations
             python3 manage.py migrate
 
             # Collect static files
