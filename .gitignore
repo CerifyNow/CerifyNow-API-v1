@@ -36,3 +36,5 @@ __pycache__/
 **/migrations/*.py
 **/__pycache__/
 !**/migrations/__init__.py
+*.py[cod]
+
