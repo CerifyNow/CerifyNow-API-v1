@@ -44,59 +44,52 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            set -e
+            set -e  # Stop script on first error
 
             cd /home/ubuntu
+            REPO_DIR="CerifyNow"
 
-            REPO_DIR="CerifyNow" 
-
-            # Clone or update the repository
+            # Clone or reset repository
             if [ ! -d "$REPO_DIR" ]; then
-              echo "Cloning repository into $REPO_DIR..."
+              echo "Cloning repository..."
               git clone https://github.com/CerifyNow/CerifyNow-API-v1.git $REPO_DIR
             else
-              echo "Repository already exists, pulling the latest changes..."
+              echo "Resetting local changes and pulling latest from main..."
               cd $REPO_DIR
+              git reset --hard
+              git clean -fd
               git pull origin main
               cd ..
             fi
 
-            # Check if the repo directory exists after clone/pull
-            if [ ! -d "$REPO_DIR" ]; then
-              echo "Error: The directory '$REPO_DIR' does not exist after cloning or pulling the repository."
-              exit 1
-            fi
-
-            # Navigate into the repository directory
-            echo "Navigating into $REPO_DIR directory..."
+            # Navigate into the project
             cd $REPO_DIR
 
-            # Create virtual environment if it doesn't exist
+            # Create virtual environment if missing
             if [ ! -d "venv" ]; then
               echo "Creating virtual environment..."
               python3 -m venv venv
             fi
 
-            # Activate the virtual environment
+            # Activate virtual environment
             source venv/bin/activate
 
-            # Install dependencies
+            # Install requirements
             echo "Installing dependencies..."
             pip install --upgrade pip
             pip install -r requirements.txt
 
-            # Run Django migrations
+            # Run migrations (makemigrations is not needed on production)
             echo "Running migrations..."
-            python3 manage.py makemigrations
-            python3 manage.py migrate
+            python manage.py migrate --noinput
 
             # Collect static files
             echo "Collecting static files..."
             python manage.py collectstatic --noinput
 
-            # Restart Django via systemd
+            # Restart the Django service
             echo "Restarting Django service..."
             sudo systemctl daemon-reload
             sudo systemctl restart cerifynow.service
 
-            echo "Successfully deployed!"
+            echo "✅ Deployment complete!"

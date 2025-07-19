@@ -33,9 +33,7 @@ __pycache__/
 *.log
 
 # Ignore all migration files except __init__.py
-**/migrations/*.py
 **/migrations/__pycache__
 **/__pycache__/
-!**/migrations/__init__.py
 *.py[cod]
 
