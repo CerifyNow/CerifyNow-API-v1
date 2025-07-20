@@ -1,7 +1,9 @@
+from django.contrib.auth.hashers import check_password
 from rest_framework import status, generics, permissions
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.views import APIView
 from rest_framework_simplejwt.serializers import TokenRefreshSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model
@@ -34,7 +36,7 @@ User = get_user_model()
 
 class RegisterView(generics.CreateAPIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated, UserPermissions]
     queryset = User.objects.all()
     serializer_class = UserRegistrationSerializer
 
@@ -55,41 +57,44 @@ class RegisterView(generics.CreateAPIView):
             'message': 'Muvaffaqiyatli ro\'yxatdan o\'tdingiz'
         }, status=status.HTTP_201_CREATED)
 
-class LoginView(generics.GenericAPIView):
+class LoginAPIView(APIView):
     parser_classes = (MultiPartParser, FormParser, JSONParser)
-    permission_classes = [AllowAny, UserPermissions]
-    serializer_class = UserLoginSerializer
+    permission_classes = [AllowAny]
 
     @extend_schema(
         summary="User Login",
-        description="Foydalanuvchini tizimga kirgizadi va JWT tokenlarni qaytaradi.",
+        description="Login user with email and password",
         request=UserLoginSerializer,
         responses={
-            200: OpenApiResponse(
-                response=UserSerializer,
-                description="Muvaffaqiyatli tizimga kirildi"
-            ),
-            400: OpenApiResponse(description="Login yoki parol xato")
+            200: OpenApiResponse(response=UserLoginSerializer, description="JWT access token and refresh token"),
+            400: OpenApiResponse(description="Invalid credentials")
         },
         tags=["Authentication"]
     )
-    
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        
-        # Generate JWT tokens
-        refresh = RefreshToken.for_user(user)
-        
-        return Response({
-            'user': UserSerializer(user).data,
-            'tokens': {
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-            },
-            'message': 'Muvaffaqiyatli kirdingiz'
-        })
+    def post(self, request):
+        serializer = UserLoginSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data['email']
+            password = serializer.validated_data['password']
+
+            try:
+                user_obj = User.objects.get(email=user)
+            except User.DoesNotExist:
+                return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+            if user_obj and check_password(password, user_obj.password):
+                refresh = RefreshToken.for_user(user_obj)
+                access_token = str(refresh.access_token)
+
+                return Response(
+                    {
+                        "refresh": str(refresh),
+                        "access": access_token
+                    }, status=status.HTTP_200_OK
+                )
+
+        return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
 
 @extend_schema(
     summary="Access tokenni yangilash",
