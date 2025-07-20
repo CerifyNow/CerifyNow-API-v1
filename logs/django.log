@@ -433,3 +433,5 @@ INFO 2025-07-20 11:28:51,664 autoreload 115061 125884406411392 /home/multicode/P
 INFO 2025-07-20 11:28:52,499 autoreload 115207 129280582267008 Watching for file changes with StatReloader
 INFO 2025-07-20 11:28:53,271 basehttp 115207 129280484828864 "GET /api/docs/ HTTP/1.1" 200 13825
 INFO 2025-07-20 11:28:54,003 basehttp 115207 129280484828864 "GET /api/schema/ HTTP/1.1" 200 189485
+INFO 2025-07-20 11:37:29,307 autoreload 115207 129280582267008 /home/multicode/Public/py/CerifyNow-API/certifynow/settings.py changed, reloading.
+INFO 2025-07-20 11:37:29,821 autoreload 116426 139207950651520 Watching for file changes with StatReloader
