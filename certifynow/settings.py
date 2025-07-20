@@ -305,6 +305,7 @@ SPECTACULAR_SETTINGS = {
     ],
 }
 
+
 # Debug Toolbar Configuration
 if DEBUG:
     INTERNAL_IPS = [
