@@ -294,7 +294,7 @@ SPECTACULAR_SETTINGS = {
     'SCHEMA_PATH_PREFIX': '/api/v1/',
     'SERVERS': [
         {'url': 'http://localhost:8000', 'description': 'Development server'},
-        {'url': 'https://api.certifynow.uz', 'description': 'Production server'},
+        {'url': 'https://api.cerifynow.uz', 'description': 'Production server'},
     ],
     'TAGS': [
         {'name': 'Authentication', 'description': 'User authentication endpoints'},

@@ -460,3 +460,5 @@ WARNING 2025-07-20 12:29:40,434 basehttp 5660 130112471168704 "POST /api/v1/auth
 INFO 2025-07-20 12:29:54,591 basehttp 5660 130112471168704 "POST /api/v1/auth/register/ HTTP/1.1" 201 1334
 INFO 2025-07-20 12:30:26,501 basehttp 5660 130112471168704 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
 INFO 2025-07-20 12:30:26,866 basehttp 5660 130112471168704 "POST /api/v1/auth/login/ HTTP/1.1" 200 582
+INFO 2025-07-20 12:31:17,595 autoreload 5660 130112653103232 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
+INFO 2025-07-20 12:31:18,127 autoreload 7093 129885055406208 Watching for file changes with StatReloader
