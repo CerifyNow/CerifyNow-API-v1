@@ -462,3 +462,17 @@ INFO 2025-07-20 12:30:26,501 basehttp 5660 130112471168704 "OPTIONS /api/v1/auth
 INFO 2025-07-20 12:30:26,866 basehttp 5660 130112471168704 "POST /api/v1/auth/login/ HTTP/1.1" 200 582
 INFO 2025-07-20 12:31:17,595 autoreload 5660 130112653103232 /home/multicode/Public/py/CerifyNow-API/accounts/views.py changed, reloading.
 INFO 2025-07-20 12:31:18,127 autoreload 7093 129885055406208 Watching for file changes with StatReloader
+INFO 2025-08-14 11:35:13,735 autoreload 9424 8733548288 Watching for file changes with StatReloader
+WARNING 2025-08-14 11:35:21,459 basehttp 9424 6135279616 "GET / HTTP/1.1" 404 12950
+INFO 2025-08-14 11:35:21,482 basehttp 9424 6135279616 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-14 11:35:21,482 basehttp 9424 6152105984 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-08-14 11:35:21,483 basehttp 9424 6168932352 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-08-14 11:35:21,487 basehttp 9424 6135279616 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2025-08-14 11:35:21,501 basehttp 9424 6152105984 "GET /favicon.ico HTTP/1.1" 404 13012
+INFO 2025-08-14 11:35:27,904 basehttp 9424 6152105984 "GET /api/docs HTTP/1.1" 301 0
+INFO 2025-08-14 11:35:27,982 basehttp 9424 6168932352 "GET /api/docs/ HTTP/1.1" 200 13823
+INFO 2025-08-14 11:35:27,990 basehttp 9424 6168932352 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-14 11:35:27,990 basehttp 9424 6135279616 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-14 11:35:28,512 basehttp 9424 6168932352 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-14 11:35:28,513 basehttp 9424 6152105984 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-14 11:35:28,565 basehttp 9424 6135279616 "GET /api/schema/ HTTP/1.1" 200 189484
