@@ -48,6 +48,12 @@ jobs:
           script: |
             set -e
 
+            # 🔹 Server packages update + Python 3.12 install
+            echo "📦 Installing server dependencies..."
+            sudo apt update
+            sudo apt install -y python3.12 python3.12-venv build-essential \
+              libjpeg-dev zlib1g-dev libpng-dev libtiff-dev libopenjp2-7-dev
+
             cd /home/ubuntu
             REPO_DIR="CerifyNow"
 
@@ -57,24 +63,26 @@ jobs:
             else
               echo "🔄 Pulling latest changes..."
               cd $REPO_DIR
+              git reset --hard
               git pull origin main
               cd ..
             fi
 
             cd /home/ubuntu/$REPO_DIR
 
-            
-            echo "🐍 Creating virtual environment..."
-            python3 -m venv venv || python -m venv venv || { echo "❌ Venv yaratib bo‘lmadi"; exit 1; }
-            
+            echo "🐍 Creating virtual environment (if not exists)..."
+            if [ ! -d "venv" ]; then
+              python3.12 -m venv venv
+            fi
+
             echo "⚙️ Activating virtual environment..."
             source venv/bin/activate
 
-            echo "📦 Installing dependencies..."
-            pip install --upgrade pip
+            echo "📦 Installing Python dependencies..."
+            pip install --upgrade pip setuptools wheel
             pip install -r requirements.txt
 
-            echo "🧬 Running migrations..."
+            echo "🧬 Applying migrations..."
             python manage.py migrate --noinput
 
             echo "🎨 Collecting static files..."
