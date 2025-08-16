@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Certificate, CertificateTemplate, CertificateVerification
+from certificates.models import Certificate, CertificateTemplate, CertificateVerification
 from accounts.serializers import UserSerializer
 
 class CertificateSerializer(serializers.ModelSerializer):
@@ -25,31 +25,32 @@ class CertificateSerializer(serializers.ModelSerializer):
         
         return super().create(validated_data)
 
+
 class CertificateCreateSerializer(serializers.ModelSerializer):
     holder_email = serializers.EmailField(write_only=True)
-    
+
     class Meta:
         model = Certificate
         fields = [
             'title', 'description', 'certificate_type', 'institution_name',
             'institution_address', 'degree', 'field_of_study', 'grade',
-            'issue_date', 'expiry_date', 'holder_email', 'certificate_file'
+            'issue_date', 'expiry_date', 'holder_email', 'certificate_file',
         ]
-    
+
     def create(self, validated_data):
         from django.contrib.auth import get_user_model
         User = get_user_model()
-        
+
         holder_email = validated_data.pop('holder_email')
         try:
             holder = User.objects.get(email=holder_email)
         except User.DoesNotExist:
             raise serializers.ValidationError({'holder_email': 'Bunday email bilan foydalanuvchi topilmadi'})
-        
+
         validated_data['holder'] = holder
         validated_data['issuer'] = self.context['request'].user
         validated_data['status'] = 'issued'
-        
+
         return super().create(validated_data)
 
 class CertificateTemplateSerializer(serializers.ModelSerializer):
