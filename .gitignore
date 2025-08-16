@@ -31,6 +31,7 @@ next-env.d.ts
 __pycache__/
 *.pyc
 *.log
+logs/django.loglogs/
 
 # Ignore all migration files except __init__.py
 **/migrations/__pycache__
