@@ -124,6 +124,7 @@ class CustomTokenRefreshView(TokenRefreshView):
 
 class ProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserSerializer
+    parser_classes = (MultiPartParser, FormParser, JSONParser)
     permission_classes = [IsAuthenticated]
     
     def get_object(self):
