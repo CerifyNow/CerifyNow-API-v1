@@ -20,6 +20,7 @@ class User(AbstractUser):
     is_verified = models.BooleanField(_('Tasdiqlangan'), default=False)
     date_of_birth = models.DateField(_('Tug\'ilgan sana'), blank=True, null=True)
     address = models.TextField(_('Manzil'), blank=True)
+    can_create_certificates = models.BooleanField(_('Sertifikat yaratishi mumkinmi'),default=False)
 
     # Additional fields for institution admins
     institution_name = models.CharField(_('Muassasa nomi'), max_length=255, blank=True)

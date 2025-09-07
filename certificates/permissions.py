@@ -3,14 +3,16 @@ from rest_framework import permissions
 
 class CanCreateCertificatePermission(permissions.BasePermission):
     """
-    Permission to allow only admins and students to create certificates.
+    Permission to allow only users who have `can_create_certificates=True`.
     """
 
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
             return True
-        return request.user.is_authenticated and request.user.can_create_certificates
-
+        return (
+            request.user.is_authenticated
+            and getattr(request.user, "can_create_certificates", False)
+        )
 
 class IsOwnerOrIssuerOrCanView(permissions.BasePermission):
     """

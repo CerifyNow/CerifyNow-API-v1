@@ -17,6 +17,17 @@ from certificates.permissions import (
     CanCreateCertificatePermission, IsOwnerOrIssuerOrCanView,
     IsSuperAdminPermission, IsInstitutionAdminPermission
 )
+from rest_framework.permissions import IsAuthenticated
+
+@extend_schema(
+    summary="Sertifikat yaratish",
+    description="Faqat admin va student foydalanuvchilar sertifikat yaratishi mumkin."
+)
+class CertificateCreateView(generics.CreateAPIView):
+    queryset = Certificate.objects.all()
+    serializer_class = CertificateSerializer
+    permission_classes = [IsAuthenticated, CanCreateCertificatePermission]
+
 
 
 @extend_schema(
